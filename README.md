@@ -1,10 +1,10 @@
-# flow — skill Alexa per ThoughtFlow
+# Flow Reminder — skill Alexa per ThoughtFlow
 
-Skill personale: «Alexa, chiedi a flow di ricordare che devo pulire la cucina oggi» → il pensiero arriva nell'app
+Skill personale: «Alexa, chiedi a Flow Reminder di ricordare che devo pulire la cucina oggi» → il pensiero arriva nell'app
 Android ThoughtFlow, con l'ora in cui l'hai detto. Lì l'AI decide se è una task o un'idea e l'app pensa ai reminder.
 Su Alexa non viene creato niente (né reminder né liste).
 
-*Personal Alexa skill: "Alexa, ask flow to remember to clean the kitchen today" sends the thought to the ThoughtFlow
+*Personal Alexa skill: "Alexa, ask Flow Reminder to remember to clean the kitchen today" sends the thought to the ThoughtFlow
 Android app, with the time you said it.*
 
 ## Come funziona
@@ -18,10 +18,10 @@ Il codice di collegamento (cassetta + chiave) si genera nell'app e si incolla **
 Alexa. In questo repository non c'è nessun segreto.
 
 ## Frasi
-- «Alexa, chiedi a flow di ricordare che …» / «… di ricordarmi di …» / «… di segnare …»
-- «Alexa, apri flow» → «Cosa vuoi che ti ricordi?»
-- «Alexa, chiedi a flow di riconoscere la mia voce» (una volta)
-- *English: "Alexa, ask flow to remember …", "Alexa, open flow", "Alexa, ask flow to recognise my voice".*
+- «Alexa, chiedi a Flow Reminder di ricordare che …» / «… di ricordarmi di …» / «… di segnare …»
+- «Alexa, apri Flow Reminder» → «Cosa vuoi che ti ricordi?»
+- «Alexa, chiedi a Flow Reminder di riconoscere la mia voce» (una volta)
+- *English: "Alexa, ask Flow Reminder to remember …", "Alexa, open Flow Reminder", "Alexa, ask Flow Reminder to recognise my voice".*
 
 ## Struttura
 - `lambda/` — codice Node.js (`index.js`, `crypto.js`, `outbox.js`, `texts.js`, `config.js`)

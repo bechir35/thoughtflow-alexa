@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "flow",
+      "invocationName": "flow reminder",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
