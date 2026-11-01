@@ -1,0 +1,101 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "flow",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{thought}"
+              ]
+            }
+          ],
+          "samples": [
+            "remember that {thought}",
+            "remember to {thought}",
+            "remember {thought}",
+            "remind me that {thought}",
+            "remind me to {thought}",
+            "remind me about {thought}",
+            "remind me {thought}",
+            "note that {thought}",
+            "note {thought}",
+            "write down {thought}",
+            "save {thought}",
+            "add {thought}"
+          ]
+        },
+        {
+          "name": "RegisterVoiceIntent",
+          "slots": [],
+          "samples": [
+            "recognise my voice",
+            "recognize my voice",
+            "learn my voice",
+            "remember my voice",
+            "register my voice",
+            "save my voice"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureIntent",
+          "delegationStrategy": "SKILL_RESPONSE",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.CaptureIntent.thought"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "SKILL_RESPONSE"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.CaptureIntent.thought",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What should I remember?"
+          }
+        ]
+      }
+    ]
+  }
+}

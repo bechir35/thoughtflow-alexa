@@ -1,0 +1,114 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "flow",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{thought}"
+              ]
+            }
+          ],
+          "samples": [
+            "ricordare che {thought}",
+            "ricordare di {thought}",
+            "ricordare {thought}",
+            "ricordarmi che {thought}",
+            "ricordarmi di {thought}",
+            "ricordarmi {thought}",
+            "ricorda che {thought}",
+            "ricorda di {thought}",
+            "ricorda {thought}",
+            "ricordami che {thought}",
+            "ricordami di {thought}",
+            "ricordami {thought}",
+            "segnare che {thought}",
+            "segnare {thought}",
+            "segna che {thought}",
+            "segna {thought}",
+            "annotare che {thought}",
+            "annotare {thought}",
+            "annota {thought}",
+            "salvare {thought}",
+            "salva {thought}",
+            "aggiungere {thought}",
+            "aggiungi {thought}"
+          ]
+        },
+        {
+          "name": "RegisterVoiceIntent",
+          "slots": [],
+          "samples": [
+            "riconoscere la mia voce",
+            "riconosci la mia voce",
+            "imparare la mia voce",
+            "impara la mia voce",
+            "registrare la mia voce",
+            "registra la mia voce",
+            "memorizzare la mia voce",
+            "memorizza la mia voce"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureIntent",
+          "delegationStrategy": "SKILL_RESPONSE",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.CaptureIntent.thought"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "SKILL_RESPONSE"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.CaptureIntent.thought",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Cosa vuoi che ti ricordi?"
+          }
+        ]
+      }
+    ]
+  }
+}

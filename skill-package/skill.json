@@ -1,0 +1,83 @@
+{
+  "manifest": {
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "locales": {
+        "it-IT": {
+          "name": "flow",
+          "summary": "Manda i tuoi pensieri a ThoughtFlow.",
+          "description": "Skill personale: quello che chiedi a flow di ricordare arriva nell'app ThoughtFlow, cifrato.",
+          "examplePhrases": [
+            "Alexa, chiedi a flow di ricordare che devo pulire la cucina oggi",
+            "Alexa, apri flow",
+            "Alexa, chiedi a flow di riconoscere la mia voce"
+          ],
+          "keywords": [
+            "promemoria",
+            "pensieri"
+          ]
+        },
+        "en-GB": {
+          "name": "flow",
+          "summary": "Send your thoughts to ThoughtFlow.",
+          "description": "Personal skill: what you ask flow to remember reaches the ThoughtFlow app, encrypted.",
+          "examplePhrases": [
+            "Alexa, ask flow to remember to clean the kitchen today",
+            "Alexa, open flow",
+            "Alexa, ask flow to recognise my voice"
+          ],
+          "keywords": [
+            "reminders",
+            "thoughts"
+          ]
+        },
+        "en-US": {
+          "name": "flow",
+          "summary": "Send your thoughts to ThoughtFlow.",
+          "description": "Personal skill: what you ask flow to remember reaches the ThoughtFlow app, encrypted.",
+          "examplePhrases": [
+            "Alexa, ask flow to remember to clean the kitchen today",
+            "Alexa, open flow",
+            "Alexa, ask flow to recognize my voice"
+          ],
+          "keywords": [
+            "reminders",
+            "thoughts"
+          ]
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Personal skill for the ThoughtFlow app, used only in development.",
+      "category": "ORGANIZERS_AND_ASSISTANTS",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "interfaces": []
+      }
+    },
+    "permissions": [
+      {
+        "name": "alexa::person_id:read"
+      }
+    ],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "locales": {
+        "it-IT": {
+          "privacyPolicyUrl": "https://github.com/bechir35/thoughtflow-alexa#privacy"
+        },
+        "en-GB": {
+          "privacyPolicyUrl": "https://github.com/bechir35/thoughtflow-alexa#privacy"
+        },
+        "en-US": {
+          "privacyPolicyUrl": "https://github.com/bechir35/thoughtflow-alexa#privacy"
+        }
+      }
+    }
+  }
+}
