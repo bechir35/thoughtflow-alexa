@@ -161,10 +161,10 @@ async function run() {
   r = await skill.invoke(capture('clean the kitchen today', { locale: 'en-US' }));
   assert.match(speech(r), /Done: clean the kitchen today\. ThoughtFlow is on it\./);
 
-  // 11. Modelli: tutte le lingue hanno "flow reminder", lo slot e le frasi con la parola davanti (regola di Amazon).
+  // 11. Modelli: italiano "flow reminder", inglese "thought flow", lo slot e le frasi con la parola davanti (regola di Amazon).
   for (const loc of ['it-IT', 'en-GB', 'en-US']) {
     const m = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'skill-package', 'interactionModels', 'custom', loc + '.json'), 'utf8')).interactionModel;
-    assert.strictEqual(m.languageModel.invocationName, 'flow reminder');
+    assert.strictEqual(m.languageModel.invocationName, loc === 'it-IT' ? 'flow reminder' : 'thought flow');
     const intent = m.languageModel.intents.find((i) => i.name === 'CaptureIntent');
     assert.ok(intent.samples.length >= 10);
     intent.samples.forEach((s) => assert.ok(/^\S.* \{thought\}$/.test(s), loc + ': ' + s));

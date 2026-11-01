@@ -8,8 +8,8 @@
           "summary": "Manda i tuoi pensieri a ThoughtFlow.",
           "description": "Skill personale: quello che chiedi a Flow Reminder di ricordare arriva nell'app ThoughtFlow, cifrato.",
           "examplePhrases": [
-            "Alexa, chiedi a Flow Reminder di ricordare che devo pulire la cucina oggi",
             "Alexa, apri Flow Reminder",
+            "Alexa, chiedi a Flow Reminder di segnare che devo pulire la cucina oggi",
             "Alexa, chiedi a Flow Reminder di riconoscere la mia voce"
           ],
           "keywords": [
@@ -18,13 +18,13 @@
           ]
         },
         "en-GB": {
-          "name": "Flow Reminder",
+          "name": "Thought Flow",
           "summary": "Send your thoughts to ThoughtFlow.",
-          "description": "Personal skill: what you ask Flow Reminder to remember reaches the ThoughtFlow app, encrypted.",
+          "description": "Personal skill: what you ask Thought Flow to note reaches the ThoughtFlow app, encrypted.",
           "examplePhrases": [
-            "Alexa, ask Flow Reminder to remember to clean the kitchen today",
-            "Alexa, open Flow Reminder",
-            "Alexa, ask Flow Reminder to recognise my voice"
+            "Alexa, open Thought Flow",
+            "Alexa, ask Thought Flow to note that I need to clean the kitchen today",
+            "Alexa, ask Thought Flow to recognise my voice"
           ],
           "keywords": [
             "reminders",
@@ -32,13 +32,13 @@
           ]
         },
         "en-US": {
-          "name": "Flow Reminder",
+          "name": "Thought Flow",
           "summary": "Send your thoughts to ThoughtFlow.",
-          "description": "Personal skill: what you ask Flow Reminder to remember reaches the ThoughtFlow app, encrypted.",
+          "description": "Personal skill: what you ask Thought Flow to note reaches the ThoughtFlow app, encrypted.",
           "examplePhrases": [
-            "Alexa, ask Flow Reminder to remember to clean the kitchen today",
-            "Alexa, open Flow Reminder",
-            "Alexa, ask Flow Reminder to recognize my voice"
+            "Alexa, open Thought Flow",
+            "Alexa, ask Thought Flow to note that I need to clean the kitchen today",
+            "Alexa, ask Thought Flow to recognize my voice"
           ],
           "keywords": [
             "reminders",

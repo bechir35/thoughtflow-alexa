@@ -1,5 +1,7 @@
 'use strict';
 // Quello che dice Alexa. Il pensiero viene ripetuto, così ti accorgi subito se ha capito male.
+// Nomi: italiano "Flow Reminder", inglese "Thought Flow". Mai "ricordare"/"remember" nelle frasi consigliate:
+// sull'Echo vero Alexa le prende per i suoi promemoria (provato il 01/11/2026).
 
 const TEXTS = {
   it: {
@@ -15,8 +17,8 @@ const TEXTS = {
     voiceKnown: 'Ti conosco già: salvo solo i tuoi pensieri.',
     voiceTaken: "Flow Reminder conosce già la voce di un'altra persona. Per cambiarla, collega di nuovo Alexa dall'app ThoughtFlow.",
     notLinked: "Flow Reminder non è ancora collegata al telefono. Incolla il codice di ThoughtFlow nel file config della skill e premi Deploy.",
-    help: 'Puoi dire: chiedi a Flow Reminder di ricordare che devo pulire la cucina oggi. Cosa vuoi che ti ricordi?',
-    fallback: 'Non ho capito. Prova a dire: chiedi a Flow Reminder di ricordare che, e poi il tuo pensiero.',
+    help: 'Puoi dire: apri Flow Reminder, oppure: chiedi a Flow Reminder di segnare che devo pulire la cucina oggi. Cosa vuoi che ti ricordi?',
+    fallback: 'Non ho capito. Prova a dire: chiedi a Flow Reminder di segnare che, e poi il tuo pensiero.',
     bye: 'Ok.',
     error: "Qualcosa non ha funzionato e non l'ho salvato. Riprova.",
   },
@@ -26,15 +28,15 @@ const TEXTS = {
     savedLater: (t) => `Done: ${t}. It will reach your phone as soon as possible.`,
     notSaved: "I couldn't save it, please try again in a moment.",
     notRecognized: "I didn't recognise your voice, so I didn't save it. Please try again.",
-    needVoice: 'First I need to know your voice. Say: Alexa, ask Flow Reminder to recognise my voice.',
+    needVoice: 'First I need to know your voice. Say: Alexa, ask Thought Flow to recognise my voice.',
     noVoiceId:
-      "I can't recognise your voice. In the Alexa app create a voice ID, turn on Personalise skills and allow Flow Reminder to recognise you. Then try again.",
+      "I can't recognise your voice. In the Alexa app create a voice ID, turn on Personalise skills and allow Thought Flow to recognise you. Then try again.",
     voiceSaved: 'Done, I now recognise your voice. From now on I only save your thoughts.',
     voiceKnown: 'I already know you: I only save your thoughts.',
-    voiceTaken: "Flow Reminder already knows another person's voice. To change it, connect Alexa again from the ThoughtFlow app.",
-    notLinked: "Flow Reminder isn't connected to your phone yet. Paste the ThoughtFlow code into the skill's config file and press Deploy.",
-    help: 'You can say: ask Flow Reminder to remember to clean the kitchen today. What should I remember?',
-    fallback: "Sorry, I didn't get that. Try saying: ask Flow Reminder to remember, and then your thought.",
+    voiceTaken: "Thought Flow already knows another person's voice. To change it, connect Alexa again from the ThoughtFlow app.",
+    notLinked: "Thought Flow isn't connected to your phone yet. Paste the ThoughtFlow code into the skill's config file and press Deploy.",
+    help: 'You can say: open Thought Flow, or: ask Thought Flow to note that I need to clean the kitchen today. What should I remember?',
+    fallback: "Sorry, I didn't get that. Try saying: ask Thought Flow to note that, and then your thought.",
     bye: 'Okay.',
     error: "Something went wrong and I didn't save it. Please try again.",
   },
