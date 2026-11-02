@@ -11,6 +11,22 @@ const { texts, ssmlSafe } = require('./texts');
 
 const MAX_TEXT = 1500;
 
+/**
+ * Fase 11: i verbi più comuni, così basta dire "Alexa, chiedi a Flow Reminder di comprare il pane".
+ * Amazon vuole una parola fissa davanti alla parte libera: per ogni verbo c'è un intent ("comprare {thought}"),
+ * e qui il verbo torna davanti alla frase ("comprare" + "il pane"). Il modello it-IT.json si rigenera con
+ * tools/add-verbs.js partendo da questa lista.
+ */
+const VERBS_IT = [
+  'comprare', 'chiamare', 'telefonare', 'pagare', 'prenotare', 'portare', 'prendere', 'fare', 'mandare', 'inviare',
+  'spedire', 'scrivere', 'ritirare', 'pulire', 'lavare', 'sistemare', 'controllare', 'rispondere', 'preparare', 'cucinare',
+  'restituire', 'cercare', 'studiare', 'leggere', 'finire', 'organizzare', 'contattare', 'mettere', 'cambiare', 'riparare',
+  'aggiustare', 'annaffiare', 'buttare', 'stendere', 'andare', 'passare', 'ordinare', 'rinnovare', 'disdire', 'stampare',
+  'ricaricare', 'aggiornare', 'fissare', 'iniziare', 'provare', 'chiedere',
+];
+const verbIntentName = (verb) => 'Verb' + verb[0].toUpperCase() + verb.slice(1) + 'Intent';
+const VERB_INTENTS = Object.fromEntries(VERBS_IT.map((v) => [verbIntentName(v), v]));
+
 /** Pubblica un messaggio nella cassetta (POST https://ntfy.sh/<topic>). Risolve true/false, non lancia mai. */
 function publishToNtfy(topic, body, timeoutMs = 2500) {
   return new Promise((resolve) => {
@@ -67,14 +83,21 @@ function buildSkill(deps = {}) {
   };
 
   const CaptureIntentHandler = {
-    canHandle: (h) => Alexa.getRequestType(h.requestEnvelope) === 'IntentRequest' && Alexa.getIntentName(h.requestEnvelope) === 'CaptureIntent',
+    canHandle: (h) => {
+      if (Alexa.getRequestType(h.requestEnvelope) !== 'IntentRequest') return false;
+      const name = Alexa.getIntentName(h.requestEnvelope);
+      return name === 'CaptureIntent' || Object.prototype.hasOwnProperty.call(VERB_INTENTS, name);
+    },
     async handle(h) {
       const t = texts(Alexa.getLocale(h.requestEnvelope));
       const pairing = parsePairing(pairingCode());
       if (!pairing) return h.responseBuilder.speak(t.notLinked).withShouldEndSession(true).getResponse();
 
-      const said = String(Alexa.getSlotValue(h.requestEnvelope, 'thought') || '').trim().slice(0, MAX_TEXT);
-      if (!said) return h.responseBuilder.speak(t.ask).reprompt(t.ask).addElicitSlotDirective('thought').getResponse();
+      const rest = String(Alexa.getSlotValue(h.requestEnvelope, 'thought') || '').trim();
+      // Solo il verbo ("chiedi a Flow Reminder di comprare"): chiede il pensiero intero.
+      if (!rest) return h.responseBuilder.speak(t.ask).reprompt(t.ask).addElicitSlotDirective('thought', captureIntentShell()).getResponse();
+      const verb = VERB_INTENTS[Alexa.getIntentName(h.requestEnvelope)];
+      const said = (verb ? verb + ' ' + rest : rest).slice(0, MAX_TEXT);
 
       let attrs;
       try {
@@ -220,3 +243,5 @@ exports.handler = (event, context, callback) => {
   return lambdaHandler(event, context, callback);
 };
 exports.buildSkill = buildSkill;
+exports.VERBS_IT = VERBS_IT;
+exports.verbIntentName = verbIntentName;

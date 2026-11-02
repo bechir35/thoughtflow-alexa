@@ -73,6 +73,558 @@
             "memorizzare la mia voce",
             "memorizza la mia voce"
           ]
+        },
+        {
+          "name": "VerbComprareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "comprare {thought}"
+          ]
+        },
+        {
+          "name": "VerbChiamareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "chiamare {thought}"
+          ]
+        },
+        {
+          "name": "VerbTelefonareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "telefonare {thought}"
+          ]
+        },
+        {
+          "name": "VerbPagareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "pagare {thought}"
+          ]
+        },
+        {
+          "name": "VerbPrenotareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "prenotare {thought}"
+          ]
+        },
+        {
+          "name": "VerbPortareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "portare {thought}"
+          ]
+        },
+        {
+          "name": "VerbPrendereIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "prendere {thought}"
+          ]
+        },
+        {
+          "name": "VerbFareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "fare {thought}"
+          ]
+        },
+        {
+          "name": "VerbMandareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "mandare {thought}"
+          ]
+        },
+        {
+          "name": "VerbInviareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "inviare {thought}"
+          ]
+        },
+        {
+          "name": "VerbSpedireIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "spedire {thought}"
+          ]
+        },
+        {
+          "name": "VerbScrivereIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "scrivere {thought}"
+          ]
+        },
+        {
+          "name": "VerbRitirareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "ritirare {thought}"
+          ]
+        },
+        {
+          "name": "VerbPulireIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "pulire {thought}"
+          ]
+        },
+        {
+          "name": "VerbLavareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "lavare {thought}"
+          ]
+        },
+        {
+          "name": "VerbSistemareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "sistemare {thought}"
+          ]
+        },
+        {
+          "name": "VerbControllareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "controllare {thought}"
+          ]
+        },
+        {
+          "name": "VerbRispondereIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "rispondere {thought}"
+          ]
+        },
+        {
+          "name": "VerbPreparareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "preparare {thought}"
+          ]
+        },
+        {
+          "name": "VerbCucinareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "cucinare {thought}"
+          ]
+        },
+        {
+          "name": "VerbRestituireIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "restituire {thought}"
+          ]
+        },
+        {
+          "name": "VerbCercareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "cercare {thought}"
+          ]
+        },
+        {
+          "name": "VerbStudiareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "studiare {thought}"
+          ]
+        },
+        {
+          "name": "VerbLeggereIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "leggere {thought}"
+          ]
+        },
+        {
+          "name": "VerbFinireIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "finire {thought}"
+          ]
+        },
+        {
+          "name": "VerbOrganizzareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "organizzare {thought}"
+          ]
+        },
+        {
+          "name": "VerbContattareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "contattare {thought}"
+          ]
+        },
+        {
+          "name": "VerbMettereIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "mettere {thought}"
+          ]
+        },
+        {
+          "name": "VerbCambiareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "cambiare {thought}"
+          ]
+        },
+        {
+          "name": "VerbRiparareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "riparare {thought}"
+          ]
+        },
+        {
+          "name": "VerbAggiustareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "aggiustare {thought}"
+          ]
+        },
+        {
+          "name": "VerbAnnaffiareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "annaffiare {thought}"
+          ]
+        },
+        {
+          "name": "VerbButtareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "buttare {thought}"
+          ]
+        },
+        {
+          "name": "VerbStendereIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "stendere {thought}"
+          ]
+        },
+        {
+          "name": "VerbAndareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "andare {thought}"
+          ]
+        },
+        {
+          "name": "VerbPassareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "passare {thought}"
+          ]
+        },
+        {
+          "name": "VerbOrdinareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "ordinare {thought}"
+          ]
+        },
+        {
+          "name": "VerbRinnovareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "rinnovare {thought}"
+          ]
+        },
+        {
+          "name": "VerbDisdireIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "disdire {thought}"
+          ]
+        },
+        {
+          "name": "VerbStampareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "stampare {thought}"
+          ]
+        },
+        {
+          "name": "VerbRicaricareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "ricaricare {thought}"
+          ]
+        },
+        {
+          "name": "VerbAggiornareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "aggiornare {thought}"
+          ]
+        },
+        {
+          "name": "VerbFissareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "fissare {thought}"
+          ]
+        },
+        {
+          "name": "VerbIniziareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "iniziare {thought}"
+          ]
+        },
+        {
+          "name": "VerbProvareIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "provare {thought}"
+          ]
+        },
+        {
+          "name": "VerbChiedereIntent",
+          "slots": [
+            {
+              "name": "thought",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "chiedere {thought}"
+          ]
         }
       ],
       "types": []

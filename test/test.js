@@ -4,7 +4,7 @@
 const assert = require('assert');
 const path = require('path');
 const fs = require('fs');
-const { buildSkill } = require('../lambda/index');
+const { buildSkill, VERBS_IT, verbIntentName } = require('../lambda/index');
 const { parsePairing, seal, open } = require('../lambda/crypto');
 const outbox = require('../lambda/outbox');
 
@@ -169,6 +169,34 @@ async function run() {
     assert.ok(intent.samples.length >= 10);
     intent.samples.forEach((s) => assert.ok(/^\S.* \{thought\}$/.test(s), loc + ': ' + s));
   }
+
+  // 12. Fase 11: verbi comuni senza "segnare". "chiedi a Flow Reminder di comprare il pane" → "comprare il pane".
+  const verbIntent = (name, value) =>
+    envelope({ type: 'IntentRequest', dialogState: 'STARTED', intent: { name, confirmationStatus: 'NONE', slots: { thought: { name: 'thought', value, confirmationStatus: 'NONE' } } } });
+  const beforeVerb = posts.length;
+  r = await skill.invoke(verbIntent(verbIntentName('comprare'), 'il pane'));
+  assert.match(speech(r), /Fatto: comprare il pane\./);
+  assert.strictEqual(JSON.parse(open(posts[beforeVerb], pairing)).text, 'comprare il pane');
+  r = await skill.invoke(verbIntent(verbIntentName('chiamare'), 'il dentista domani alle 10'));
+  assert.strictEqual(JSON.parse(open(posts[posts.length - 1], pairing)).text, 'chiamare il dentista domani alle 10');
+  // Solo il verbo: chiede il pensiero intero (CaptureIntent), senza salvare niente.
+  const sentBefore = posts.length;
+  r = await skill.invoke(verbIntent(verbIntentName('comprare'), undefined));
+  assert.match(speech(r), /Cosa vuoi che ti ricordi\?/);
+  assert.strictEqual(r.response.directives[0].updatedIntent.name, 'CaptureIntent');
+  assert.strictEqual(posts.length, sentBefore);
+  // Un ospite non passa nemmeno con i verbi.
+  r = await skill.invoke(envelope({ type: 'IntentRequest', intent: { name: verbIntentName('pagare'), confirmationStatus: 'NONE', slots: { thought: { name: 'thought', value: 'la bolletta', confirmationStatus: 'NONE' } } } }, { person: GUEST }));
+  assert.match(speech(r), /Non ti ho riconosciuto/);
+  // Il modello italiano ha un intent per ogni verbo, con la frase "<verbo> {thought}".
+  const itModel = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'skill-package', 'interactionModels', 'custom', 'it-IT.json'), 'utf8')).interactionModel.languageModel;
+  for (const verb of VERBS_IT) {
+    const intent = itModel.intents.find((i) => i.name === verbIntentName(verb));
+    assert.ok(intent, 'manca il verbo ' + verb + ': esegui node tools/add-verbs.js');
+    assert.deepStrictEqual(intent.samples, [verb + ' {thought}']);
+    assert.strictEqual(intent.slots[0].type, 'AMAZON.SearchQuery');
+  }
+  assert.strictEqual(new Set(VERBS_IT).size, VERBS_IT.length, 'verbi doppi');
 
   console.log('OK: tutte le prove della skill passate');
 }

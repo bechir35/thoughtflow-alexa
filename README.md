@@ -20,6 +20,8 @@ Alexa. In questo repository non c'è nessun segreto.
 ## Frasi
 - «Alexa, apri Flow Reminder» → «Cosa vuoi che ti ricordi?» → il pensiero
 - «Alexa, chiedi a Flow Reminder di segnare che …» / «… di annotare …»
+- Con i verbi più comuni basta il verbo: «Alexa, chiedi a Flow Reminder di comprare il pane», «… di chiamare il dentista
+  domani alle 10». Lista in `lambda/index.js` (`VERBS_IT`); dopo averla cambiata: `node tools/add-verbs.js`.
 - «Alexa, chiedi a Flow Reminder di riconoscere la mia voce» (una volta)
 - Da evitare: «… di ricordare che …». Sull'Echo vero Alexa lo prende per i suoi promemoria.
 - *English (name "Thought Flow", because "reminder" goes to Alexa's own reminders): "Alexa, open Thought Flow",
@@ -29,6 +31,7 @@ Alexa. In questo repository non c'è nessun segreto.
 - `lambda/` — codice Node.js (`index.js`, `crypto.js`, `outbox.js`, `texts.js`, `config.js`)
 - `skill-package/` — manifest e modelli di interazione (it-IT, en-GB, en-US)
 - `test/test.js` — prove con richieste Alexa simulate (`NODE_PATH=<ask-sdk-core> node test/test.js`)
+- `tools/add-verbs.js` — rigenera gli intent dei verbi nel modello italiano
 
 ## Privacy
 - La skill riceve da Alexa il testo trascritto, l'ora della richiesta, il fuso orario dell'Echo e un identificativo anonimo
